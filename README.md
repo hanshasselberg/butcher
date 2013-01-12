@@ -15,5 +15,6 @@ Follow http://openresty.org/#Installation.
 ## Request
 
 ```
-curl --data '{"ops":[{"method":"get","url":"/me"}, {"method":"get","url":"/me/tasks"}]}' localhost:8080/batch
+$ curl --data '{"ops":[{"method":"get","url":"/me"}, {"method":"get","url":"/me/tasks"}]}' localhost:8080/batch
+{"results":[{"status":200,"header":{"Content-Type":"application\/json"},"body":"{\"name\":\"Hans\"}\n"},{"status":200,"header":{"Content-Type":"application\/json"},"body":"[{\"title\": \"build batch service in nginx\"}]\n"}]}
 ```
