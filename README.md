@@ -1,6 +1,6 @@
 # The Butcher
 
-Batch service in nginx!
+It is a service implentation of Alex Koppel's [Batch API](https://github.com/arsduo/batch_api): in nginx/lua.
 
 ## Installation
 
