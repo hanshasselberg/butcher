@@ -3,7 +3,7 @@
 It is a service implentation of Alex Koppel's [Batch API](https://github.com/arsduo/batch_api) in nginx/lua.
 It is not ready yet but enough to see where this is leading to.
 
-The sequential option is ignored and get requests are fired in parallel.
+The sequential option is ignored and GET requests are fired in parallel.
 
 ## Installation
 
