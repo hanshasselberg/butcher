@@ -15,6 +15,44 @@ Follow http://openresty.org/#Installation.
 ## Request
 
 ```
-$ curl --data '{"ops":[{"method":"get","url":"/me"}, {"method":"get","url":"/me/tasks"}]}' localhost:8080/batch
-{"results":[{"status":200,"header":{"Content-Type":"application\/json"},"body":"{\"name\":\"Hans\"}\n"},{"status":200,"header":{"Content-Type":"application\/json"},"body":"[{\"title\": \"build batch service in nginx\"}]\n"}]}
+$ curl -s --data '{"ops":[{"method":"get","url":"/me"}, {"method":"get","url":"/me"}, {"method":"post","url":"/me/tasks"}, {"method":"get","url":"/me"}, {"method":"get","url":"/me"}]}' localhost:8080/batch | python -m json.tool
+{
+    "results": [
+        {
+            "body": "{\"name\":\"Hans\"}\n",
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "status": 200
+        },
+        {
+            "body": "{\"name\":\"Hans\"}\n",
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "status": 200
+        },
+        {
+            "body": "[{\"title\": \"build batch service in nginx\"}]\n",
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "status": 200
+        },
+        {
+            "body": "{\"name\":\"Hans\"}\n",
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "status": 200
+        },
+        {
+            "body": "{\"name\":\"Hans\"}\n",
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "status": 200
+        }
+    ]
+}
 ```
